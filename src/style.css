@@ -5,26 +5,33 @@ body{
 	font-weight: bold;
 	color: #353535;
 }
+
 a{
 	text-decoration: none;
 	color: #1f6078;
 	padding: 0;
 	margin: 0;
 }
+
 a:hover{
 	color:#2d8aad;
 }
+
 img{ border: 0;}
+
 .clear { clear:both; }
+
 #wrapper{
 	margin: 0 auto;
 	width: 800px;
 }
+
 #header{
 	height: 200px;
 	width: 100%;
 	display: block;
 }
+
 #header img{
 	padding-top: 40px;
 	margin-left: auto;
@@ -33,9 +40,11 @@ img{ border: 0;}
 	height: 83px;
 	display: block;
 }
+
 #mainWrap{
 	width: 100%;
 }
+
 #mainHead{
 	height: 1.4em;
 	margin-bottom: 0.8em;
@@ -45,13 +54,16 @@ img{ border: 0;}
 	width: 100%;
 	position: relative;
 }
+
 #main .inset{
 	padding: 30px;
 }
+
 #mainHead .title{
 	float: left;
 	font-size: 1.4em;
 }
+
 #mainHead .right{
 	width: 50%;
 	font-size: 0.8em;
@@ -60,63 +72,75 @@ img{ border: 0;}
 	right: 0;
 	bottom: 0;
 }
+
 #main{
 	width: 100%;
 	line-height: 1.5em;
 	background: #d7f5ff;
 	border: 1px solid #4f8ca1;
 }
+
 #main .label{
 	line-height: 150%;
 	display: block;
 }
+
 #main .inputLine{
 	height: 30px;
 	white-space: nowrap;
 	position: relative;
 }
+
 #main input{
 	width: 430px;
 	height: 28px;
 	font-size: 14px;
 	display: inline;
 }
+
 #add{
 	display:inline-block;
 	position: absolute;
 	top: 1px;
 	margin-left: 5px;
 }
+
 #patterns{
 	margin-top: 1.2em;
-	background: url(box.png);
+	background: url(img/box.png);
 	border: 1px solid #164b74;
 	color: #FFF;
 	min-height: 150px;
 }
+
 #patterns .head{
 	display: block;
 	width: 100%;
 	height: 1.5em;
-	background: #4275a8 url(box-header.png) repeat-x;
+	background: #4275a8 url(img/box-header.png) repeat-x;
 	border-bottom: 1px solid #224964;
 }
+
 #patterns .head span{
 	padding-left: 0.8em;
 }
+
 #patterns .even, #patterns .odd{
 	padding-left: 1em;
 	border-bottom: 1px solid #1e3f5a;
 	height: 26px;;
 	position: relative;
 }
+
 #patterns .even{
 	background: #306590;
 }
+
 #patterns .odd{
 	background: #55b3fe;
 	color: #f9f9f9;
 }
+
 #wrapper .footer{
 	display: block;
 	padding-top: 0.3em;
@@ -124,30 +148,38 @@ img{ border: 0;}
 	font-size: 0.6em;
 	color: #6b6b6b;
 }
+
 .edit, .delete, #add{
 	width: 26px;
 	height: 26px;
 	background-repeat: no-repeat;
 }
+
 .edit, .delete{
 	float: right;
 	margin-right: 15px;
 }
+
 .edit{
-	background-image: url(wrench-inactive.png);
+	background-image: url(img/wrench-inactive.png);
 }
+
 .edit:hover{
-	background-image: url(wrench-active.png);
+	background-image: url(img/wrench-active.png);
 }
+
 .delete{
-	background-image: url(delete-inactive.png);
+	background-image: url(img/delete-inactive.png);
 }
+
 .delete:hover{
-	background-image: url(delete-active.png);
+	background-image: url(img/delete-active.png);
 }
+
 #add{
-	background-image: url(add-inactive.png);
+	background-image: url(img/add-inactive.png);
 }
+
 #add:hover{
-	background-image: url(add-active.png);
+	background-image: url(img/add-active.png);
 }

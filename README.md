@@ -1,7 +1,10 @@
 # IncognitoRegex
 
-unfortunately I lost the original source code,   
-this is the code from current deployed verison in the chrome Web store
+This extension allows you to configure Regular Expressions for websites that you want to always open in Incognito mode.
+
+For example, if you always want to open your banking page in Incognito mode, you can use a regex like: .*(bank|banking).*
+
+You can experiment with regex at: https://regexr.com/8ab88
 
 ## How To Start Developing
 
