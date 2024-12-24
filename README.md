@@ -20,3 +20,6 @@ https://developer.chrome.com/docs/extensions/get-started
 
 ### TODOs
 - this readme should be extended
+- merge extracted incognito tabs into existing incognito window
+- collect errors and display them in options dialog
+- make it faster
