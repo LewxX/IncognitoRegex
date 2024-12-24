@@ -1,30 +1,29 @@
-chrome.runtime.onInstalled.addListener(() => {
-	chrome.tabs.onCreated.addListener((tab) => {
+chrome.tabs.onCreated.addListener((tab) => {
+	if (tab.url !== undefined) checkRegexList(tab.url, tab);
+});
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+	if (changeInfo.url !== undefined) {
+		checkRegexList(tab.url, tab);
+	}
+});
+
+chrome.tabs.onActivated.addListener((activeInfo) => {
+	chrome.tabs.get(activeInfo.tabId, (tab) => {
+		console.log('onActivated', tab.url);
 		if (tab.url !== undefined) checkRegexList(tab.url, tab);
 	});
+});
 
-	chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-		if (changeInfo.url !== undefined) {
-			checkRegexList(tab.url, tab);
-		}
-	});
-
-	chrome.tabs.onActivated.addListener((activeInfo) => {
-		chrome.tabs.get(activeInfo.tabId, (tab) => {
-			console.log('onActivated', tab.url);
+chrome.windows.onCreated.addListener((window) => {
+	chrome.tabs.query({ windowId: window.id }, (tabs) => {
+		tabs.forEach((tab) => {
+			console.log('onCreated', tab.url);
 			if (tab.url !== undefined) checkRegexList(tab.url, tab);
 		});
 	});
-
-	chrome.windows.onCreated.addListener((window) => {
-		chrome.tabs.query({ windowId: window.id }, (tabs) => {
-			tabs.forEach((tab) => {
-				console.log('onCreated', tab.url);
-				if (tab.url !== undefined) checkRegexList(tab.url, tab);
-			});
-		});
-	});
 });
+
 
 function testRegex(regex, url) {
 	try {
