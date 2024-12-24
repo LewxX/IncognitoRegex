@@ -1,7 +1,7 @@
 {
   "update_url": "https://clients2.google.com/service/update2/crx",
   "manifest_version": 3,
-  "name": "Incognito Regex (Fixed Version)",
+  "name": "Automatic Incognito Mode via Regex",
   "description": "Automatically switch to Incognito mode when a regex matches. (Fixed by LewxX)",
   "background": {
     "service_worker": "background.js"
@@ -12,6 +12,6 @@
 	  "128": "icons/128.png"
   },
   "options_page": "options.html",
-  "permissions": ["history", "tabs"],
+  "permissions": ["history", "tabs", "storage"],
   "version": "1.3"
 }

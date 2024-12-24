@@ -128,7 +128,6 @@ img{ border: 0;}
 #patterns .even, #patterns .odd{
 	padding-left: 1em;
 	border-bottom: 1px solid #1e3f5a;
-	height: 26px;;
 	position: relative;
 }
 
@@ -141,12 +140,25 @@ img{ border: 0;}
 	color: #f9f9f9;
 }
 
-#wrapper .footer{
+.examples{
+	display: grid;
+	grid-template-columns: auto auto;
+	/* make only the last coumn content right aligned: */
+	justify-content: space-between;
+    row-gap: 8px;
+}
+
+.footer{
 	display: block;
 	padding-top: 0.3em;
 	padding-left: 0.6em;
-	font-size: 0.6em;
+	font-size: 90%;
 	color: #6b6b6b;
+}
+
+.error{
+	color: #3d0202;
+	font-size: 0.8em;
 }
 
 .edit, .delete, #add{

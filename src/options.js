@@ -1,19 +1,19 @@
 function add() {
   var regex = document.getElementById("regex").value;
-  chrome.storage.local.get(null, (items) => {
+  chrome.storage.sync.get(null, (items) => {
     var key = Object.keys(items).length;
     if (!isStored(regex, items)) {
       document.getElementById("regex").value = '';
       var id = getIdFrom(key);
       var obj = {};
       obj[id] = regex;
-      chrome.storage.local.set(obj, createList);
+      chrome.storage.sync.set(obj, createList);
     }
   });
 }
 
 function edit(key) {
-  chrome.storage.local.get(key, (items) => {
+  chrome.storage.sync.get(key, (items) => {
     var regex = items[key];
     document.getElementById("regex").value = regex;
   });
@@ -34,8 +34,8 @@ function isStored(regex, items) {
 }
 
 function removeEntry(key) {
-  chrome.storage.local.remove(key, () => {
-    chrome.storage.local.get(null, (items) => {
+  chrome.storage.sync.remove(key, () => {
+    chrome.storage.sync.get(null, (items) => {
       var newItems = {};
       var i = 0;
       for (var id in items) {
@@ -43,11 +43,20 @@ function removeEntry(key) {
         newItems[getIdFrom(i)] = regex;
         i++;
       }
-      chrome.storage.local.clear(() => {
-        chrome.storage.local.set(newItems, createList);
+      chrome.storage.sync.clear(() => {
+        chrome.storage.sync.set(newItems, createList);
       });
     });
   });
+}
+
+function checkForErrors(regex) {
+  try {
+    new RegExp(regex, 'i');
+    return false;
+  } catch (e) {
+    return e;
+  }
 }
 
 function createRow(key, id, regex, evenOdd) {
@@ -57,7 +66,16 @@ function createRow(key, id, regex, evenOdd) {
   var html = regex;
   html += '<a href="#" class="delete" title="delete regex"></a>';
   html += '<a href="#" class="edit" title="edit regex"></a>';
+
+  if (checkForErrors(regex)) {
+    var lastError = checkForErrors(regex);
+   html += '<div class="error"><b>error: </b>'+lastError+'</div>';
+  }
+
   html += '<div style="clear:both;"></div>';
+  // TODO: add last error
+  //html += 'last error: '+lastError;
+
   row.innerHTML = html;
   return row;
 }
@@ -85,7 +103,7 @@ function createList() {
 
   var evenOdd = "even";
 
-  chrome.storage.local.get(null, (items) => {
+  chrome.storage.sync.get(null, (items) => {
     var i = 0;
     for (var id in items) {
       var item = items[id];
