@@ -6,7 +6,7 @@ For example, if you always want to open your banking page in Incognito mode, you
 
 You can experiment with regex at: https://regexr.com/8ab88
 
-## How To Start Developing
+## How To Start Developing (contribution)
 
 https://developer.chrome.com/docs/extensions/get-started
 
@@ -18,8 +18,9 @@ https://developer.chrome.com/docs/extensions/get-started
 - click reload icon on dev extension
 
 
-### TODOs
-- this readme should be extended
-- merge extracted incognito tabs into existing incognito window
-- collect errors and display them in options dialog
-- make it faster
+## TODOs
+- this readme should be extended.
+- merge extracted incognito tabs into existing incognito window.
+- collect errors and display them in options dialog.
+- make it faster.
+- remove jQuery dependency.
