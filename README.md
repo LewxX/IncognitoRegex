@@ -8,9 +8,9 @@ You can experiment with regex at: https://regexr.com/8ab88
 
 ## Notes
 
-***this is some legacy code (~10years old), which I partially updated to comply eith google chrome manifest V3.***
+***this is some legacy code (~10years old), which I partially updated to comply with google chrome manifest V3.***
 
-if you find a but, please report it.
+if you find a bug, please report it.
 
 ## How To Start Developing (contribution)
 
