@@ -6,6 +6,12 @@ For example, if you always want to open your banking page in Incognito mode, you
 
 You can experiment with regex at: https://regexr.com/8ab88
 
+## Notes
+
+***this is some legacy code (~10years old), which I partially updated to comply eith google chrome manifest V3.***
+
+if you find a but, please report it.
+
 ## How To Start Developing (contribution)
 
 https://developer.chrome.com/docs/extensions/get-started
